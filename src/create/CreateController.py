@@ -86,14 +86,14 @@ class CreateController:
 
     def job_embed_controller(self, job):
         print('=========================================================')
-        print(job['serviceType'])
+        print(job)
 
         listDays = ""
         for i in range(len(job['listDays'])):
             listDays += job['listDays'][i]
             if i<len(job['listDays'])-1: listDays += ", "
         
-        text = f"Công việc {job['uid']} của khách hàng {job['userID']} sẽ bắt đầu vào lúc {job['startTime']} các ngày {listDays} ở địa chỉ {job['location']}. "
+        text = f"Công việc {job['uid']} của khách hàng {job['user']['uid']} sẽ bắt đầu vào lúc {job['startTime']} các ngày {listDays} ở địa chỉ {job['location']}. "
 
         if job['serviceType']=='CLEANING': text = self.getTextCleaning(text, job)
         elif job['serviceType']=='HEALTHCARE': text = self.getTextHealthcare(text, job)
@@ -112,5 +112,10 @@ class CreateController:
 
     def update_status_controller(self, jobID, status):
         return self.pineconeService.pinecone_update_metadata_status(jobID, status)
+
+    # --------------------------------------------------------------
+
+    def delete_job_embed(self, jobID):
+        return self.pineconeService.pinecone_delete(jobID)
 
     # --------------------------------------------------------------

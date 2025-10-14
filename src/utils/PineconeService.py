@@ -38,11 +38,10 @@ class PineconeService:
                     "values": embed,
                     "metadata": {
                         "jobID": job['uid'],
-                        "userID": job['userID'],
+                        "userID": job['user']['uid'],
                         "price": job['price'],
                         "startTime": job['startTime'],
                         "listDays": job['listDays'],
-                        "status": job['status'],
                         "serviceType": job['serviceType'],
                         "location": job['location'],
                         "createdAt": job['createdAt']
@@ -113,6 +112,23 @@ class PineconeService:
             return {
                 "success": False,
                 "error": "Không tìm thấy thông tin"
+            }
+
+    # --------------------------------------------------------------
+
+    def pinecone_delete(self, jobID):
+        try: 
+            self.index.delete(ids=[jobID], namespace=self.namespace)
+
+            return {
+                "success": True,
+                "message": "Thành công"
+            }
+        except Exception as e:
+            print(e)
+            return {
+                "success": False,
+                "error": "Xoá embed không thành công"
             }
 
     # --------------------------------------------------------------

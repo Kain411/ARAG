@@ -26,7 +26,7 @@ class AragController:
             name="Find Job Retriever",
             func=self.jobController.search,
             description=(
-                "Dùng để tìm kiếm công việc theo nhu cầu như ngày làm, giờ làm, loại công việc, giá tiền, địa chỉ hoặc số giờ làm."
+                "Không dùng tool này nếu role là user. Dùng để tìm kiếm công việc theo nhu cầu như ngày làm, giờ làm, loại công việc, giá tiền, địa chỉ hoặc số giờ làm."
             ),
             return_direct=True
         )
