@@ -57,13 +57,45 @@ def update_status():
         })
 
 # --------------------------------------------------------------
+
+@app.route("/api/update-metadata/location", methods=['PUT'])
+def update_location():
+    data = request.get_json()
+    jobID = data['uid']
+    location = data['location']
+
+    createController = CreateController()
+    result = createController.update_location_controller(jobID, location)
+
+    if result:
+        return jsonify({
+            "success": True,
+            "message": "Thành công"
+        })
+    else:
+        return jsonify({
+            "success": False,
+            "error": "Không thành công"
+        })
+
+# --------------------------------------------------------------
+    
+@app.route("/api/job/<jobID>", methods=['DELETE'])
+def delete_embed(jobID):
+    
+    createController = CreateController()
+    result = createController.delete_job_embed(jobID)
+    
+    return result
+
+# --------------------------------------------------------------
 # Test: Find Job
 @app.route("/api/job/search", methods=['POST'])
 def search_job():
     data = request.get_json()
 
     jobController = JobController()
-    result = jobController.search(data['query'])
+    result = jobController.search(data['query'], data['reference'])
 
     return result
 
@@ -74,29 +106,21 @@ def answer_info():
     data = request.get_json()
 
     infoController = InfoController()
-    result = infoController.answer(data['query'])
+    result = infoController.answer(data['query'], data['reference'])
 
     return result
 
 # --------------------------------------------------------------
 
-@app.route("/api/chatbox", methods=['POST'])
+@app.route("/api/chatbot", methods=['POST'])
 def chat_box():
-    data = request.get_json()
+    data = request.get_json(force=True)
+
+    print(data['query'])
 
     aragController = AragController()
-    result = aragController.agent_search(data['query'])
+    result = aragController.agent_search(data['query'], data['reference'])
 
-    return result
-
-# --------------------------------------------------------------
-
-@app.route("/api/job/<jobID>", methods=['DELETE'])
-def delete_embed(jobID):
-    
-    createController = CreateController()
-    result = createController.delete_job_embed(jobID)
-    
     return result
 
 # --------------------------------------------------------------

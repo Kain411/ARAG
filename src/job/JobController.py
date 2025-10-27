@@ -9,8 +9,14 @@ class JobController:
 
     # --------------------------------------------------------------
 
-    def search(self, query):
-        embed = self.ollamaService.ollama_get_embedding(query)
+    def search(self, query: str, reference: dict):
+        location = reference['location']
+
+        print(query)
+        print(location)
+
+        query_vector = f"{query}. Tôi ở địa chỉ {location}"
+        embed = self.ollamaService.ollama_get_embedding(query_vector)
 
         if not embed:  return { "success": False }   
 

@@ -8,7 +8,7 @@ from langchain_ollama import OllamaEmbeddings
 from langchain.schema import Document
 
 # --------- Config ---------
-DATA_DIR = Path("src/helpo/data")
+DATA_DIR = Path("src/info/data")
 PERSIST_DIR = "chroma_db"
 EMBED_MODEL = "mxbai-embed-large:latest"  # or nomic-embed-text:latest
 
@@ -72,13 +72,14 @@ def preprocess_keep_newlines(text: str) -> str:
     return text.strip()
 
 # --------- Regex split by heading lines (robust) ---------
-heading_re = re.compile(r'^(#{1,6})\s*(.+)', re.MULTILINE)
+# heading_re = re.compile(r'^(#{1,6})\s*(.+)', re.MULTILINE)
+heading_re = re.compile(r'^(##)\s*(.+)', re.MULTILINE)
 
 def split_by_headings_regex(text: str, source: str):
     """
-    Return list[Document] split by lines starting with #..#
-    Keeps intro (text before first heading) as a separate doc if present.
-    Each Document.page_content includes the heading line + its content.
+    Chia văn bản thành các Document khi gặp heading cấp 2 (## ...)
+    Giữ phần mở đầu (trước heading đầu tiên) nếu có.
+    Heading khác (#, ###, ####...) không tách riêng mà nằm trong phần nội dung.
     """
     matches = list(heading_re.finditer(text))
     docs_out = []

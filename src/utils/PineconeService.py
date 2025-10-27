@@ -53,47 +53,16 @@ class PineconeService:
 
     # --------------------------------------------------------------
 
-    def pinecone_update_metadata_status(self, jobID, status):
-        
-        try:
-            url = f"{self.PINECONE_HOST}/vectors/update"
-
-            headers = {
-                "Api-Key": self.PINECONE_API_KEY,
-                "Content-Type": "application/json",
-                "X-Pinecone-API-Version": "unstable"
-            }
-
-            data = {
-                "dry_run": False,
-                "namespace": self.namespace,
-                "filter": {
-                    "jobID": {"$eq": f"{jobID}"}
-                },
-                "setMetadata": {
-                    "status": f"{status}"
-                }
-            }
-
-            response = requests.post(url, headers=headers, data=json.dumps(data))
-            print(response.json())
-            return True
-        
-        except requests.exceptions.RequestException as e:
-            print(f"Lỗi cập nhật metadata Pinecone: {e}")
-            return False
-
-    # --------------------------------------------------------------
-
     def pinecone_search_data(self, embed):
-        
+
         try:
+
             result = self.index.query(
                 namespace = self.namespace,
                 vector=embed,
                 top_k=2,
                 include_metadata=True,
-                include_values=False
+                include_values=False,
             )
 
             print(result)
@@ -131,4 +100,68 @@ class PineconeService:
                 "error": "Xoá embed không thành công"
             }
 
+    # --------------------------------------------------------------
+
+    def pinecone_update_metadata_status(self, jobID, status):
+        
+        try:
+            url = f"{self.PINECONE_HOST}/vectors/update"
+
+            headers = {
+                "Api-Key": self.PINECONE_API_KEY,
+                "Content-Type": "application/json",
+                "X-Pinecone-API-Version": "unstable"
+            }
+
+            data = {
+                "dry_run": False,
+                "namespace": self.namespace,
+                "filter": {
+                    "jobID": {"$eq": f"{jobID}"}
+                },
+                "setMetadata": {
+                    "status": f"{status}"
+                }
+            }
+
+            response = requests.post(url, headers=headers, data=json.dumps(data))
+            print(response.json())
+            return True
+        
+        except requests.exceptions.RequestException as e:
+            print(f"Lỗi cập nhật metadata Pinecone: {e}")
+            return False
+    
+    # --------------------------------------------------------------
+
+    def pinecone_update_metadata_location(self, jobID, location):
+        
+        try:
+            url = f"{self.PINECONE_HOST}/vectors/update"
+
+            headers = {
+                "Api-Key": self.PINECONE_API_KEY,
+                "Content-Type": "application/json",
+                "X-Pinecone-API-Version": "unstable"
+            }
+
+            data = {
+                "dry_run": False,
+                "namespace": self.namespace,
+                "filter": {
+                    "jobID": {"$eq": f"{jobID}"}
+                },
+                "setMetadata": {
+                    "location": f"{location}"
+                }
+            }
+
+            response = requests.post(url, headers=headers, data=json.dumps(data))
+            print(response.json())
+            return True
+        
+        except requests.exceptions.RequestException as e:
+            print(f"Lỗi cập nhật metadata Pinecone: {e}")
+            return False
+    
     # --------------------------------------------------------------

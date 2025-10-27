@@ -1,8 +1,8 @@
 <h1 align="center"> Chăm sóc sức khỏe (Healthcare) </h1>
 
 ## 1. Danh mục: Chăm sóc sức khỏe (Healthcare)
-> Dịch vụ hỗ trợ chăm sóc sức khỏe tại nhà giúp khách hàng tiết kiệm thời gian, đảm bảo sự an toàn và tiện lợi.  
-> Dịch vụ chăm sóc sức khỏe hỗ trợ chăm sóc: trẻ em, người lớn tuổi và người khuyết tật
+> Danh mục hỗ trợ chăm sóc sức khỏe tại nhà giúp khách hàng tiết kiệm thời gian, đảm bảo sự an toàn và tiện lợi.  
+> Danh mục chăm sóc sức khỏe bao gồm các dịch vụ: Chăm sóc trẻ em, Chắm sóc người lớn tuổi và Chăm sóc người khuyết tật.
 
 ---
 

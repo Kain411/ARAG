@@ -1,7 +1,10 @@
 from langchain_ollama import ChatOllama
 from langchain.agents import Tool, initialize_agent
+import json
+
 from src.job.JobController import JobController
 from src.info.InfoController import InfoController
+
 
 class AragController:
     
@@ -15,18 +18,18 @@ class AragController:
 
         self.infoTool = Tool(
             name="Search Info Application",
-            func=self.infoController.answer,
+            func=lambda x: self.infoController.answer(**json.loads(x)),
             description=(
-                "Dùng để trả lời về các thông tin của ứng dụng như danh mục, dịch vụ, công việc, giá tiền, ca làm việc, thời lượng làm việc, ..."
+                "Dùng để trả lời về các thông tin của ứng dụng bao gồm các thông tin như: danh mục, dịch vụ, thời lượng, mức tiền, thông tin người sáng tạo."
             ),
             return_direct=True
         )
 
         self.jobTool = Tool(
             name="Find Job Retriever",
-            func=self.jobController.search,
+            func=lambda x: self.jobController.search(**json.loads(x)),
             description=(
-                "Không dùng tool này nếu role là user. Dùng để tìm kiếm công việc theo nhu cầu như ngày làm, giờ làm, loại công việc, giá tiền, địa chỉ hoặc số giờ làm."
+                "Dùng để tìm kiếm công việc theo nhu cầu của người dùng như ngày làm, loại công việc, giá tiền, địa chỉ hoặc số giờ làm."
             ),
             return_direct=True
         )
@@ -38,6 +41,11 @@ class AragController:
             verbose=True
         )
 
-    def agent_search(self, query):
-        response = self.agent.run(query)
+    def agent_search(self, query, reference):
+        input_data = json.dumps({
+            "query": query,
+            "reference": reference
+        })
+
+        response = self.agent.invoke({"input": input_data})
         return response

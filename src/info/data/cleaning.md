@@ -1,7 +1,8 @@
 <h1 align="center"> Dọn dẹp vệ sinh (Cleaning) </h1>
 
 ## 1. Danh mục: Dọn dẹp vệ sinh (Cleaning)
-> Dịch vụ dọn dẹp vệ sinh giúp bạn có 1 ngôi nhà gọn gàng và sạch sẽ
+> Dọn dẹp vệ sinh giúp bạn có 1 ngôi nhà gọn gàng và sạch sẽ
+> Danh mục dọn dẹp vệ sinh bao gồm các dịch vụ: Dọn dẹp Phòng khách, Dọn dẹp Phòng bếp, Dọn dẹp Phòng tắm và Dọn dẹp Phòng ngủ
 
 ---
 

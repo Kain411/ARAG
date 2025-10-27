@@ -115,6 +115,11 @@ class CreateController:
 
     # --------------------------------------------------------------
 
+    def update_location_controller(self, jobID, location):
+        return self.pineconeService.pinecone_update_metadata_location(jobID, location)
+
+    # --------------------------------------------------------------
+
     def delete_job_embed(self, jobID):
         return self.pineconeService.pinecone_delete(jobID)
 

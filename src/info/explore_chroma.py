@@ -26,6 +26,7 @@ for c in collections:
         print("  (trống)")
     else:
         for idx, doc in zip(ids, docs):
+            print("=================================================================")
             print(f"  ID: {idx}\n  Nội dung: {doc}\n")
     print("-------------------------")
 

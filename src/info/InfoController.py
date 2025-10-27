@@ -7,7 +7,7 @@ class InfoController:
 
     # --------------------------------------------------------------
 
-    def answer(self, query):
+    def answer(self, query: str, reference: dict):
         result = self.infoService.info_answer(query)
         return result
     
