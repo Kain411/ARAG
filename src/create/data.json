@@ -1,0 +1,240 @@
+[
+    {
+        "uid": "J01",
+        "user": {
+            "uid": "U01"
+        },
+        "duration": {
+            "workingHour": 6
+        },
+        "isCooking": true,
+        "isIroning": false,
+        "price": 98000,
+        "startTime": "10:30",
+        "listDays": ["09/10/2025", "28/10/2025"],
+        "serviceType": "CLEANING",
+        "location": "Nhuệ, Chí Hòa, Hưng Hà, Thái Bình",
+        "createdAt": "23/10/2025",
+        "lat": 20.53694,
+        "lon": 106.22639
+    }
+    ,
+    {
+        "uid": "J04",
+        "user": {
+            "uid": "U01"
+        },
+        "duration": {
+            "workingHour": 3
+        },
+        "isCooking": false,
+        "isIroning": false,
+        "price": 125000,
+        "startTime": "14:00",
+        "listDays": ["20/10/2025", "28/10/2025"],
+        "serviceType": "CLEANING",
+        "location": "119/5 Yersin, Phường Phạm Ngũ Lão, Quận 1, TP. Hồ Chí Minh",
+        "createdAt": "23/10/2025",
+        "lat": 10.7740,
+        "lon": 106.6950
+    }
+    ,
+    {
+        "uid": "J07",
+        "user": {
+            "uid": "U01"
+        },
+        "duration": {
+            "workingHour": 2
+        },
+        "isCooking": true,
+        "isIroning": true,
+        "price": 150000,
+        "startTime": "14:00",
+        "listDays": ["05/11/2025", "10/11/2025"],
+        "serviceType": "CLEANING",
+        "location": "57 Vũ Trọng Khánh, Mộ Lao, Hà Đông, Hà Nội",
+        "createdAt": "23/10/2025",
+        "lat": 20.9548,
+        "lon": 105.7685
+    }
+    ,
+    {
+        "uid": "J02",
+        "user": {
+            "uid": "U01"
+        },
+        "shift": {
+            "workingHour": 2
+        },
+        "workerQuantity": 2,
+        "price": 50000,
+        "startTime": "13:30",
+        "listDays": ["25/10/2025", "05/11/2025"],
+        "serviceType": "HEALTHCARE",
+        "location": "18 Thanh Bình, Mộ Lao, Hà Đông, Hà Nội",
+        "createdAt": "23/10/2025",
+        "services": [
+            {
+                "serviceName": "Chăm sóc trẻ em",
+                "quantity": 1
+            },
+            {
+                "serviceName": "Chăm sóc người khuyết tật",
+                "quantity": 3
+            }
+        ],
+        "lat": 20.97136,
+        "lon": 105.77876
+    }
+    ,
+    {
+        "uid": "J05",
+        "user": {
+            "uid": "U01"
+        },
+        "shift": {
+            "workingHour": 4
+        },
+        "workerQuantity": 3,
+        "price": 150000,
+        "startTime": "06:30",
+        "listDays": ["28/10/2025", "30/10/2025"],
+        "serviceType": "HEALTHCARE",
+        "location": "32 Nguyễn Xiển, Kim Giang, Thanh Xuân, Hà Nội",
+        "createdAt": "23/10/2025",
+        "services": [
+            {
+                "serviceName": "Chăm sóc trẻ em",
+                "quantity": 3
+            }
+        ],
+        "lat": 20.98259,
+        "lon": 105.81150
+    }
+    ,
+    {
+        "uid": "J08",
+        "user": {
+            "uid": "U01"
+        },
+        "shift": {
+            "workingHour": 2
+        },
+        "workerQuantity": 3,
+        "price": 150000,
+        "startTime": "08:00",
+        "listDays": ["15/11/2025", "30/11/2025"],
+        "serviceType": "HEALTHCARE",
+        "location": "57A Tháp Mười, Phường 2, Quận 6, TP. Hồ Chí Minh",
+        "createdAt": "23/10/2025",
+        "services": [
+            {
+                "serviceName": "Chăm sóc người lớn tuổi",
+                "quantity": 2
+            }
+        ],
+        "lat": 10.7710,
+        "lon": 106.6730
+    }
+    ,
+    {
+        "uid": "J03",
+        "user": {
+            "uid": "U01"
+        },
+        "price": 50000,
+        "startTime": "10:30",
+        "listDays": ["05/11/2025", "10/11/2025"],
+        "serviceType": "MAINTENANCE",
+        "location": "07 Lê Lợi, Phường Xương Huân, Thàn phố Nha Trang, Khánh Hòa",
+        "createdAt": "23/10/2025",
+        "services": [
+            {
+                "serviceName": "Máy giặt",
+                "powers": [
+                    {
+                        "powerName": "Dưới 2HP",
+                        "quantity": 1,
+                        "quantityAction": 0
+                    }
+                ],
+                "maintenance": "Thay lồng giặt"
+            }
+        ],
+        "lat": 16.065,
+        "lon": 108.237
+    }
+    ,
+    {
+        "uid": "J06",
+        "user": {
+            "uid": "U01"
+        },
+        "price": 128000,
+        "startTime": "08:00",
+        "listDays": ["05/11/2025", "10/11/2025"],
+        "serviceType": "MAINTENANCE",
+        "location": "Số 8, đường Trần Hưng Đạo, phường Lê Hồng Phong, thành phố Thái Bình, tỉnh Thái Bình",
+        "createdAt": "23/10/2025",
+        "services": [
+            {
+                "serviceName": "Máy giặt",
+                "powers": [
+                    {
+                        "powerName": "Dưới 2HP",
+                        "quantity": 1,
+                        "quantityAction": 0
+                    },
+                    {
+                        "powerName": "Trên 2HP",
+                        "quantity": 1,
+                        "quantityAction": 1
+                    }
+                ],
+                "maintenance": "Thay lồng giặt"
+            }
+        ],
+        "lat": 20.4130,
+        "lon": 106.3370
+    }
+    ,
+    {
+        "uid": "J09",
+        "user": {
+            "uid": "U01"
+        },
+        "price": 250000,
+        "startTime": "08:00",
+        "listDays": ["11/12/2025", "15/12/2025"],
+        "serviceType": "MAINTENANCE",
+        "location": "Số 40, phố Nhà Thờ, Phường Hàng Trống, Quận Hoàn Kiếm, Hà Nội",
+        "createdAt": "23/10/2025",
+        "services": [
+            {
+                "serviceName": "Máy giặt",
+                "powers": [
+                    {
+                        "powerName": "Dưới 2HP",
+                        "quantity": 1,
+                        "quantityAction": 0
+                    }
+                ],
+                "maintenance": "Thay lồng giặt"
+            },
+            {
+                "serviceName": "Điều hòa",
+                "powers": [
+                    {
+                        "powerName": "9-10 kg",
+                        "quantity": 1,
+                        "quantityAction": 1
+                    }
+                ],
+                "maintenance": "Bơm gas"
+            }
+        ],
+        "lat": 21.0285,
+        "lon": 105.8048
+    }
+]

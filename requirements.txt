@@ -1,0 +1,10 @@
+flask
+flask-cors
+langchain>=0.2.12
+langchain-community>=0.2.11
+langchain-text-splitters>=0.2.2
+langchain-ollama>=0.1.0
+chromadb>=0.5.5
+python-dotenv>=1.0.1
+pinecone>=2.2.4
+langchain-chroma>=0.1.0
